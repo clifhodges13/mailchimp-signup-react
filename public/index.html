@@ -34,5 +34,25 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+    <script>
+      (function ($) {
+          window.fnames = new Array();
+          window.ftypes = new Array();
+          fnames[0] = 'EMAIL';
+          ftypes[0] = 'email';
+          fnames[1] = 'NAME';
+          ftypes[1] = 'text';
+          fnames[3] = 'ADDRESS';
+          ftypes[3] = 'address';
+          fnames[4] = 'PHONE';
+          ftypes[4] = 'phone';
+          fnames[2] = 'MESSAGE';
+          ftypes[2] = 'text';
+        }
+        (jQuery));
+
+      var $mcj = jQuery.noConflict(true);
+    </script>
   </body>
 </html>

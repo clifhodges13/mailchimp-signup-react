@@ -32,22 +32,13 @@
   }
 }
 
-.Form-container {
-  width: 100vw;
-  height: 70vh;
+.bottom-div {
+  position: absolute;
+  left: -5000px;
 }
 
-.form {
-  width: 60%;
-  height: 100%;
-  margin: 0 auto;
-  padding: 3% 0;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-around;
-  align-items: center;
-  border-radius: 10px;
-  box-shadow: 0 1rem 1rem rgba(0, 0, 0, .3);
+.response {
+  display: none;
 }
 
 .form>* {
@@ -90,7 +81,45 @@
   height: 30vh;
 }
 
-.form button[type="submit"] {
+/* mailchimp signup form styles */
+
+/* // MAILCHIMP SIGNUP FORM */
+
+/* MailChimp Form Embed Code - Classic - 12/17/2015 v10.7 */
+
+#mc_embed_signup {
+  width: 100vw;
+  height: 70vh;
+}
+
+#mc_embed_signup form {
+  width: 60%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 3% 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, .3);
+}
+
+#mc_embed_signup input {
+  width: 30vw;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, .3);
+}
+
+#mc_embed_signup input:focus {
+  backface-visibility: hidden;
+  border: none;
+  outline: 1px solid white;
+  outline-offset: .5rem;
+}
+
+#mc_embed_signup .button {
   width: 20%;
   border: none;
   padding: 1% 2%;
@@ -104,17 +133,158 @@
   transition: all .2s ease;
 }
 
-.form button[type="submit"]:hover {
+#mc_embed_signup .button:hover {
   transform: translateY(-3px) scale(1.03);
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, .3);
   cursor: pointer;
 }
 
-.form button[type="submit"]:active {
+#mc_embed_signup .button:active {
   transform: translateY(-1px) scale(1.01);
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, .3);
 }
 
-.form button[type="submit"]:focus {
-  outline: none;
+#mc_embed_signup .mc-field-group {
+  clear: left;
+  position: relative;
+  width: 100%;
+  padding-bottom: 3%;
+  min-height: 50px;
+}
+
+#mc_embed_signup .size1of2 {
+  clear: none;
+  display: inline-block;
+  width: 46%;
+  margin-right: 4%;
+}
+
+* html #mc_embed_signup .size1of2 {
+  margin-right: 2%;
+  /* Fix for IE6 double margins. */
+}
+
+#mc_embed_signup .mc-field-group input {
+  display: block;
+  width: 100%;
+  padding: 8px 0;
+  text-indent: 2%;
+}
+
+#mc_embed_signup .mc-field-group select {
+  display: inline-block;
+  width: 99%;
+  padding: 5px 0;
+  margin-bottom: 2px;
+}
+
+#mc_embed_signup .indicates-required {
+  text-align: right;
+  font-size: 11px;
+  margin-right: 4%;
+}
+
+#mc_embed_signup .asterisk {
+  color: #e85c41;
+  font-size: 150%;
+  font-weight: normal;
+  position: relative;
+  top: 5px;
+}
+
+#mc_embed_signup .clear {
+  clear: both;
+}
+
+#mc_embed_signup .mc-field-group.input-group ul {
+  margin: 0;
+  padding: 5px 0;
+  list-style: none;
+}
+
+#mc_embed_signup .mc-field-group.input-group ul li {
+  display: block;
+  padding: 3px 0;
+  margin: 0;
+}
+
+#mc_embed_signup .mc-field-group.input-group label {
+  display: inline;
+}
+
+#mc_embed_signup .mc-field-group.input-group input {
+  display: inline;
+  border: none;
+}
+
+#mc_embed_signup div#mce-responses {
+  float: left;
+  top: -1.4em;
+  padding: 0 0.5em;
+  overflow: hidden;
+  width: 90%;
+  margin: 0 5%;
+  clear: both;
+}
+
+#mc_embed_signup div.response {
+  margin: 1em 0;
+  padding: 1em 0.5em 0.5em 0;
+  font-weight: bold;
+  float: left;
+  top: -1.5em;
+  z-index: 1;
+  width: 80%;
+}
+
+#mc_embed_signup #mce-error-response {
+  display: none;
+}
+
+#mc_embed_signup #mce-success-response {
+  color: green;
+  display: none;
+}
+
+#mc_embed_signup label.error {
+  display: block;
+  float: none;
+  width: auto;
+  margin-left: 1.05em;
+  text-align: left;
+  padding: 0.5em 0;
+}
+
+#mc-embedded-subscribe {
+  clear: both;
+  width: auto;
+  display: block;
+  margin: 1em 0 1em 5%;
+}
+
+#mc_embed_signup #num-subscribers {
+  font-size: 1.1em;
+}
+
+#mc_embed_signup #num-subscribers span {
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  margin-right: 0.5em;
+  font-weight: bold;
+}
+
+#mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error {
+  display: inline-block;
+  margin: 2px 0 1em;
+  padding: .5rem 1rem;
+  background-color: rgba(white, .85);
+  border-radius: 3px;
+  font-size: 1.4rem;
+  font-weight: normal;
+  z-index: 1;
+  color: #e85c41;
+}
+
+#mc_embed_signup #mc-embedded-subscribe-form input.mce_inline_error {
+  border: 2px solid #e85c41;
 }

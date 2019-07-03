@@ -1,80 +1,38 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 // import helpers from './helpers.js';
 import './Contact.css';
 
 class Contact extends Component {
-  
-  state = {
-    name: '',
-    message: '',
-    email: '',
-    sent: false,
-    buttonText: 'Submit'
-  }
-
-  formSubmit = (e) => {
-    e.preventDefault()
-
-    this.setState({
-      buttonText: '...sending'
-    })
-
-    let data = {
-      name: this.state.name,
-      email: this.state.email,
-      message: this.state.message
-    }
-
-    axios.post({
-      method: 'post',
-      url: 'https://nodejs-express.lambda-webpt8.now.sh/',
-      headers: {
-        'Content-Type': 'text/plain;charset=utf-8'
-      }
-    }, data
-    )
-      .then(res => { // the message is not being sent, so the .catch is executing. im showing a 404 not found error in console
-        this.setState({
-          sent: true
-        }, 
-        this.resetForm())
-        console.log(this);
-      })
-      .catch(() => {
-        console.log('Message not sent')
-      })
-  }
-
-  resetForm = () => {
-    this.setState({
-      name: '',
-      message: '',
-      email: '',
-      buttonText: 'Message Sent'
-    })
-  } 
 
   render() {
     return(
-      <div className="Form-container">
-        <form className="form" onSubmit={(e) => this.formSubmit(e)}>
+      <div id="mc_embed_signup">
+        <form action="https://gmail.us3.list-manage.com/subscribe/post?u=d1dec8556657c4936cc0ce702&amp;id=c30c13d2dc" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
+          <div id="mc_embed_signup_scroll">
+            <div className="mc-field-group">
+              <input type="email" name="EMAIL" className="required email" id="mce-EMAIL" placeholder="your@email.com"/>
+            </div>
+            <div className="mc-field-group">
+              <input type="text" name="NAME" className="required" id="mce-NAME" placeholder="Name"/>
+            </div>
+            <div className="mc-field-group">
+              <input type="text" name="MESSAGE" className="required" id="mce-MESSAGE" placeholder="Message"/>
+            </div>
 
-          <h1>Contact Us</h1>
+              {/* hidden error responses */}
+              <div id="mce-responses" className="clear">
+                <div className="response" id="mce-error-response"></div>
+                <div className="response" id="mce-success-response"></div>
+              </div>    
 
-          <input onChange={e => this.setState({ name: e.target.value})} name="name" className="message-name" type="text" placeholder="Name" value={this.state.name} />
-
-          <input onChange={e => this.setState({ email: e.target.value})} name="email" className="message-email" type="email" placeholder="your@email.com" required value={this.state.email} />
-          
-          <textarea onChange={e => this.setState({ message: e.target.value})} name="message" className="message-input" type="text" placeholder="Message" value={this.state.message} required />
-
-          <button type="submit">{ this.state.buttonText }</button>
-
+              {/* <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups--> */}
+              <div className="bottom-div" aria-hidden="true"><input type="text" name="b_d1dec8556657c4936cc0ce702_c30c13d2dc" tabIndex="-1" /></div>
+              <div className="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="button" /></div>
+            </div>
         </form>
       </div>
     )
   }
-
 }
 
 export default Contact;
